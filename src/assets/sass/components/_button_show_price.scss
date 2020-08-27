@@ -1,0 +1,15 @@
+.showPrice {
+    margin-block-start: 12px;
+    padding: 13px 43px;
+
+    border-radius: 2px;
+
+    background-color: $gold;
+
+    font-size: 12px;
+    color: $black;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}

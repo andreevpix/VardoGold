@@ -1,0 +1,9 @@
+.block {
+    display: flex;
+
+    position: relative;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 0;
+}

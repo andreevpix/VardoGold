@@ -1,0 +1,517 @@
+$whiteBronze: #F1F1F1;
+$black: #0A0605;
+$lightBlack: #171717;
+$grey: #4B4B4B;
+$greyShadow: rgba(241, 241, 241, 0.7);
+$lightyGrey: #C4C4C4;
+$lightGrey: #B6B6B6;
+$lightGreyShadow: rgba(255, 255, 255, 0.7);
+$gold: #DFAB62;
+$goldShadow: rgba(236, 208, 106, 0.7);
+
+/* BLOCK Of Gold Or Gray Content */
+@mixin blockOfGoldOrGrayContent__background {
+    background: $black;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    & .wrapper__block {
+        justify-content: center;
+        align-items: center;
+
+        padding: 0;
+
+        position: relative;
+        
+        @media (min-width: 768px) {
+            justify-content: space-between;
+
+            padding-block-start: 150px;
+            padding-inline-start: 70px;
+        }
+        
+        @media (min-width: 1440px) {
+            margin-inline-end: 0;
+            padding-block-start: 115px;
+            padding-inline-start: 0;
+        }
+    }
+
+    & .popup {
+        padding: 80px 30px 40px;
+        
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        opacity: 0;
+        transition: opacity .6s linear;
+        z-index: -1;
+
+        & .popup__heading {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        & .popup__close {
+            width: 20px;
+            height: 20px;
+
+            background: url('../img/menu_mobile_close_icon.svg') no-repeat;
+            background-size: cover;
+        }
+
+        & .popup__pricesInput {
+            margin: 30px 0;
+
+            width: 100%;
+            height: 40px;
+
+            position: relative;
+
+            & .popup__pricesInputPrice {
+                padding-inline-start: 20px;
+
+                width: 100%;
+                height: 40px;
+    
+                border: 1px solid $gold;
+                border-radius: 2px;
+    
+                background: $black;
+                background: url('../img/popup/arrow.png') no-repeat 95% 50%;
+
+                font-size: 16px;
+                color: $gold;
+
+                appearance: none;
+                
+                &:focus {
+                    outline: none;
+                }
+
+                & option {
+                    background: black;
+                }
+            }
+        }
+
+        & .popup__prices {
+            width: 100%;
+
+            font-size: 12px;
+            color: white;
+
+            & tbody {
+                display: none;
+            }
+
+            & td:first-of-type {
+                text-align: left;
+            }
+
+            & td:last-of-type {
+                text-align: right;
+            }
+        }
+
+        &::before {
+            content: '';
+
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding: 0;
+    }
+}
+
+@mixin blockOfGoldOrGrayContent__inner($theme) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-inline-end: 0;
+    padding: 100px 50px 40px;
+
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    z-index: 1;
+    
+    &:before, &:after {
+        content: '';
+        
+        position: absolute;
+        right: 0;
+
+        z-index: -1;
+    }
+
+    &::before {
+        width: 100%;
+        height: 100%;
+
+        @if $theme == gold {
+            background: url('../img/mobile/slide_two.png') no-repeat;
+        } @else if $theme == gray {
+            background: url('../img/mobile/slide_three.png') no-repeat;
+        } @else {
+            background: url('../img/background_block_lombard.png') no-repeat;
+        }
+
+        background-size: cover !important;
+
+        top: 0;
+
+        opacity: 0.2;
+    }
+
+    @media (min-width: 768px) {
+        justify-content: flex-end;
+        align-items: flex-start;
+
+        height: 290px;
+
+        &:before {
+            @if $theme == gold {
+                background: url('../img/background_block_gold.png') no-repeat;
+            } @else if $theme == gray {
+                background: url('../img/background_block_gray.png') no-repeat;
+            }
+        }
+    }
+}
+
+@mixin blockOfGoldOrGrayContent__innerHeading {
+    font: bold 36px Georgia;
+    line-height: 41px;
+    color: #fff;
+
+    @media (max-width: 767px) {
+        font-size: 22px;
+    }
+}
+
+@mixin blockOfGoldOrGrayContent__innerDescriptionHeading {
+    margin: 20px 0 0;
+
+    width: 570px;
+
+    text-align: left;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
+@mixin blockOfGoldOrGrayContent__priceAtRound {
+    display: none;
+
+    & > div {
+        & > span {
+            color: #fff;
+        }
+    }
+    
+    @media (min-width: 768px) {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+
+        margin-block-start: 40px;
+        margin-block-end: 210px;
+        padding-block-end: 15px;
+        padding-inline-end: 70px;
+
+        width: 100%;
+
+        & > div {
+
+            & > span {
+                display: block;
+                
+                margin-block-end: 40px;
+    
+                width: 141px;
+
+                font-size: 14px;
+                text-align: center;
+                
+                &:last-of-type {
+                    width: 155px;
+                }
+    
+            }
+
+        }
+
+        & .priceAtRound {
+            flex-basis: 150px;
+
+            width: 150px;
+            height: 150px;
+
+            &::after {
+                width: 125px;
+                height: 125px;
+
+                left: 10px;
+            }
+        }
+
+        & .arrow__left, & .arrow__right {
+            display: none;
+        }
+    }
+    
+    @media (min-width: 1440px) {
+        margin-block-start: 60px;
+        padding-inline-start: 40px;
+
+        & .priceAtRound {
+            flex-basis: 250px;
+
+            width: 250px;
+            height: 250px;
+
+            &::before {
+                top: -24px;
+                bottom: -24px;
+                right: -24px;
+                left: -24px;
+            }
+
+            &::after {
+                width: 200px;
+
+                height: 200px;
+                left: 23px;
+            }
+        }
+    }
+}
+
+@mixin blockOfGoldOrGrayContent__priceAtRoundItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin blockOfGoldOrGrayContent__priceAtRoundOne {
+    @include blockOfGoldOrGrayContent__priceAtRoundItem;
+    
+    margin-inline-end: 50px;
+}
+
+@mixin blockOfGoldOrGrayContent__priceAtRoundLine($theme) {
+    @media (min-width: 768px) {
+        display: flex;
+        justify-content: center;
+
+        padding: 0 55px;
+
+        position: relative;
+
+        &:before {
+            content: "";
+
+            width: 182px;
+            height: 1px;
+            top: 170px;
+
+            background-position: top;
+            background-size: 17px 1px;
+            background-repeat: repeat-x;
+            
+            @if $theme == gold {
+                background-image: linear-gradient(to right, $gold 10%, rgba(255, 255, 255, 0) 0%);
+            } @else if $theme == grey {
+                background-image: linear-gradient(to right, $grey 10%, rgba(255, 255, 255, 0) 0%);
+            }
+
+            position: absolute;
+
+            transform: rotate(90deg);
+        }
+    }
+    
+    @media (min-width: 1440px) {
+        &:before {
+            width: 290px;
+
+            top: 220px;
+        }
+    }
+}
+
+/* BLOCK Of Reviews and Progress */
+@mixin block__sixProgressiveIcon($sizeWithPx) {
+    position: absolute;
+
+    @if $sizeWithPx == 70px {
+        left: 50px;
+    } @else {
+        left: calc(#{$sizeWithPx} + (50px / 10));
+    }
+
+    @media (min-width: 1440px) {
+        @if $sizeWithPx == 70px {
+            left: 70px;
+        } @else {
+            left: calc(#{$sizeWithPx} + (70px / 2.5));
+        }
+    }
+}
+
+@mixin socialIcon($type) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border: 1.5px solid $gold;
+    border-radius: 50%;
+
+    position: relative;
+
+    &::before {
+        content: '';
+
+        position: absolute;
+
+        @if $type == vk {
+            width: 15px;
+            height: 8px;
+
+            background: url('../img/socialIcons/vk.svg') no-repeat;
+        } @else if $type == youtube {
+            width: 14.12px;
+            height: 10.01px;
+
+            background: url('../img/socialIcons/youtube.svg') no-repeat;
+        } @else if $type == facebook {
+            width: 5px;
+            height: 11px;
+
+            background: url('../img/socialIcons/facebook.svg') no-repeat;
+        } @else if $type == instagram {
+            width: 11px;
+            height: 11px;
+
+            background: url('../img/socialIcons/instagram.svg') no-repeat;
+        }
+
+        background-size: contain;
+    }
+
+    &:not(:last-of-type) {
+        margin-inline-end: 20px;
+    }
+}
+
+/* BUTTONS */
+// Phone
+@mixin button_mobile_phone {
+    padding: 0 20px;
+
+    height: 38px;
+
+    border: 1px solid $gold;
+    border-radius: 2px;
+
+    background: none;
+
+    font: bold 12px Inter, sans-serif;
+    line-height: 35px;
+    text-decoration: none;
+    color: $gold;
+    white-space: nowrap;
+
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        background: $gold;
+
+        color: #fff;
+    }
+}
+
+@mixin button_mobile_round_phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 3;
+
+    width: 36px;
+    height: 36px;
+
+    font-size: 0;
+
+    border-radius: 50%;
+
+    background: $gold;
+
+    position: relative;
+
+    &::before {
+        content: '';
+
+        width: 18px;
+        height: 18px;
+
+        position: absolute;
+
+        background: url('../img/phone.svg');
+        background-size: contain;
+    }
+
+    &:hover::before {
+        animation: spin_phone 0.5s linear infinite;
+    }
+}
+
+/* ONLY MOBILE */
+@mixin block__innerMobileCode {
+    margin-block-start: 60px;
+    margin-block-end: 14px;
+
+    font: bold 22px Georgia;
+    color: $gold;
+
+    & sup {
+        position: relative;
+        top: -8px;
+    }
+}
+
+@mixin block__innerMobileText {
+    width: 180px;
+
+    margin-block-start: 60px;
+
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+}

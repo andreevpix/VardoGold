@@ -1,0 +1,284 @@
+.block__four {
+    @include blockOfGoldOrGrayContent__background;
+    & .wrapper__block {
+        align-items: center;
+
+        padding-block-end: 40px;
+
+        @media (max-width: 767px) {
+            justify-content: space-between;
+            align-items: normal;
+
+            padding-block-start: 90px;
+            padding-block-end: 0;
+        }
+
+        @media (min-width: 1440px) {
+            padding-block-start: 150px;
+        }
+    }
+}
+
+.block__fourInner {
+    @include blockOfGoldOrGrayContent__inner(lombard);
+
+    @media (min-width: 768px) {
+        padding-block-start: 115px;
+    }
+
+    @media (max-width: 767px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 90px;
+
+        padding: 0;
+
+        position: relative;
+
+        z-index: 1;
+
+        &::before {
+            content: '';
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            background: url('../img/mobile/slide_four.png') no-repeat;
+            background-size: cover;
+
+            opacity: .2;
+            z-index: -1;
+        }
+    }
+}
+
+.block__fourInnerHeading {
+    @include blockOfGoldOrGrayContent__innerHeading;
+}
+
+.block__fourInnerDescription {
+    @include blockOfGoldOrGrayContent__innerDescriptionHeading;
+}
+
+.block__fourSlider {
+    display: flex;
+    flex-direction: column;
+    
+    padding: 16px auto;
+
+    color: white;
+
+    position: relative;
+
+    & .arrow__left, .arrow__right {
+        top: 57%;
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+    & .arrow__left {
+        left: 30px;
+    }
+    & .arrow__right {
+        right: 30px;
+    }
+
+    @media (min-width: 768px) {
+        align-items: flex-start;
+
+        padding: 0;
+    }
+
+    @media (min-width: 1440px) {
+        padding-inline-start: 50px;
+    }
+}
+
+.block__fourSliderHeading{
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: $lightGreyShadow;
+    text-align: center;
+
+    @media (min-width: 768px) {
+        margin-block-end: 20px;
+        
+        font-size: 22px;
+    }
+}
+
+.block__fourSlideItem {
+    display: flex;
+
+    padding: 0;
+
+    @media (min-width: 768px) {
+        & .block__fourSlideItemTable:not(:first-child) {
+            flex-shrink: 1;
+        }
+    }
+
+    @media (max-width: 767px) {
+        width: 93px;
+    }
+}
+
+.block__fourSlideItemTable {
+    flex-shrink: 0;
+    
+    & > li {
+        font-size: 12px;
+        line-height: 30px;
+        color: $whiteBronze;
+
+        list-style-image: url('../img/check.svg');
+
+        @media (min-width: 768px) {
+            font-size: 14px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        padding-inline-end: 50px;
+    }
+
+    @media (min-width: 1440px) {
+        padding-inline-end: 100px;
+    }
+    @media (max-width: 767px) {
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+
+        width: 100vw;
+    }
+}
+
+.block__fourFeauters {
+    padding: 0 30px;
+
+    @media (min-width: 768px) {
+        display: flex;
+
+        padding: 0;
+        padding-inline-end: 70px;
+    }
+
+    //
+    @media (min-width: 1440px) {
+        justify-content: space-between;
+
+        padding-inline-start: 50px;
+        padding-inline-end: 100px;
+
+        width: 100%;
+    }
+}
+
+.block__fourFeauteItem {
+    display: flex;
+    align-items: center;
+
+    padding: 10px 20px;
+
+    background: $lightBlack;
+
+    border-radius: 2px;
+
+    &:not(:last-of-type) {
+        margin-block-end: 10px;
+
+        @media (min-width: 768px) {
+            margin-inline-end: 30px;
+            margin-block-end: 0;
+        }
+    }
+
+    &--One {
+        .block__fourFeatureIcon {
+            background: url('../img/dollar.svg') no-repeat;
+        }
+    }
+
+    &--Two {
+        .block__fourFeatureIcon {
+            background: url('../img/contract.svg') no-repeat;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1439px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        
+        padding: 30px 40px 40px 40px;
+
+        height: 324px;
+    }
+
+    @media (min-width: 1440px) {
+        padding: 30px 50px;
+    }
+
+}
+
+.block__fourFeatureIcon {
+    flex-shrink: 0;
+
+    width: 30px;
+    height: 30px;
+
+    background-size: cover !important;
+
+    @media (min-width: 768px) {
+        width: 80px;
+        height: 80px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1439px) {
+        margin-block-end: 20px;
+    }
+
+    @media (min-width: 1440px) {
+        margin-inline-end: 50px;
+    }
+}
+
+.block__fourFeauteItemInformation {
+    padding-inline-start: 10px;
+
+    @media (min-width: 768px) {
+        padding: 0;
+    }
+}
+
+.block__fourFeatureHeading {
+    font-size: 18px;
+
+    @media (min-width: 768px) {
+        margin-block-end: 15px;
+
+        font-size: 22px;
+    }
+}
+
+.block__fourFeatureDescription {
+    margin-block-start: 9px;
+
+    font-size: 10px;
+    line-height: 18px;
+    & span {
+        color: $gold;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 14px;
+        line-height: 25px;
+    }
+}

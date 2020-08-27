@@ -1,0 +1,259 @@
+.block__one {
+    background: url('../img/background_block_one.png') no-repeat fixed;
+    background-size: cover;
+    
+    & .wrapper {
+        justify-content: center;
+    }
+
+    & .wrapper__block {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+
+        padding: 120px 33px 70px;
+
+        position: relative;
+        
+        @media (min-width: 768px) {
+            justify-content: center;
+
+            padding-inline-start: 70px;
+            padding-inline-end: 70px;
+        }
+        
+        @media (min-width: 1440px) {
+            flex-direction: row;
+            justify-content: flex-start;
+
+            padding-inline-start: 100px;            
+        }
+    }
+
+    & .arrow__left, .arrow__right {
+        top: 69%;
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+    & .arrow__left {
+        left: 30px;
+    }
+    & .arrow__right {
+        right: 30px;
+    }
+
+    @media (min-width: 768px) {
+        background-position-x: right;
+    }
+}
+
+.block__onePrices {
+    order: 2;
+
+    position: relative;
+    
+    @media (min-width: 1440px) {
+        order: 1;
+    }
+
+    @media (max-width: 767px) {
+        width: 200px;
+
+        overflow: hidden;
+    }
+}
+
+.block__onePriceAtRound {
+    display: flex;
+
+    margin: 0;
+    margin-block-start: 25px;
+    padding: 15px;
+
+    & .priceAtRound {
+
+        cursor: pointer;
+
+        @media (min-width: 768px) {
+            flex-basis: 250px;
+
+            width: 250px;
+            height: 250px;
+
+            &::before {
+                top: -25px;
+                bottom: -25px;
+                right: -25px;
+                left: -25px;
+            }
+    
+            &::after {
+                width: 190px;
+                height: 190px;
+
+                left: 28px;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            margin-block-end: 0;
+
+            &::before {
+                top: -24px;
+                bottom: -24px;
+                right: -24px;
+                left: -24px;
+            }
+        }
+    }
+
+    & .priceAtRound--gold {
+        
+        @media (min-width: 768px) {
+            margin-inline-end: 78px;
+        }
+        
+        @media (min-width: 1440px) {
+            order: 2;
+
+            margin-inline-end: 0;
+        }
+    }
+
+    & .priceAtRound--grey {
+        
+        @media (min-width: 768px) {
+            margin-inline-end: 0;
+        }
+        
+        @media (min-width: 1440px) {
+            order: 1;
+
+            margin-block-end: 80px;
+        }
+    }
+
+    & .priceAtRound__priceNumber {
+        @media (min-width: 768px) {
+            font-size: 40px;
+        }
+    }
+
+    & .priceAtRound__priceDescription {
+        @media (min-width: 768px) {
+            width: 100px;
+
+            font-size: 10px;
+        }
+    }
+    
+    @media (min-width:768px) {
+        width: inherit;
+    
+        margin-block-start: 60px;
+        padding: 25px;
+    }
+    
+    @media (min-width:1440px) {
+        flex-direction: column;
+
+        margin-block-start: 0;
+        padding: 24px;
+    }
+    
+}
+
+// BLOCK INNER
+.block__oneInner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-grow: 0;
+
+    @media (min-width: 1440px) {
+        justify-content: flex-start;
+        flex-basis: 390px;
+
+        margin-inline-start: 96px;
+
+        max-width: 387px;
+
+        order: 2;
+    }
+}
+
+.block__oneInnerHeading {
+    margin-block-end: 10px;
+
+    font-size: 36px;
+    color: $lightGrey;
+    font-weight: normal;
+    letter-spacing: inherit;
+
+    @media (min-width: 768px) {
+        font-size: 54px;
+    }
+    
+    @media (min-width: 1440px) {
+        letter-spacing: 0.1em;
+    }
+}
+
+.block__oneInnerText {
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    word-break: break-all;
+    text-align: center;
+
+    opacity: 0.6;
+    
+    @media (min-width: 768px) {
+        margin-block-start: 20px;
+        margin-block-end: 30px;
+
+        font-size: 16px;
+        line-height: 27px;
+        color: $grey;
+        word-break: normal;
+    }
+    
+    @media (min-width: 1440px) {
+        margin-block-end: 50px;
+        
+        color: #ccc;
+        text-align: inherit;
+    }
+}
+
+.block__oneInnerButton {
+    display: none;
+    
+    @media (min-width: 768px) {
+        display: initial;
+
+        padding: 0 50px;
+
+        height: 56px;
+
+        border: 1px solid $gold;
+        border-radius: 2px;
+
+        background: $gold;
+
+        font-size: 14px;
+
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            background: none;
+            
+            color: #fff;
+        }
+    }
+}

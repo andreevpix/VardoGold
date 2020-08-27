@@ -1,0 +1,69 @@
+.block__two {
+    @include blockOfGoldOrGrayContent__background;
+
+    & .popup::before {
+        background: url('../img/mobile/slide_two.png') no-repeat;
+        background-size: cover;
+    }
+
+}
+
+// BLOCK INNER
+.block__twoInner {
+    @include blockOfGoldOrGrayContent__inner(gold);
+}
+
+.block__twoInnerHeading {
+    @include blockOfGoldOrGrayContent__innerHeading;
+}
+
+.block__twoInnerDescription {
+    @include blockOfGoldOrGrayContent__innerDescriptionHeading;
+}
+///////////////////////////@end
+
+// BLOCK WITH PRICES
+.block__twoPriceAtRound {
+    @include blockOfGoldOrGrayContent__priceAtRound;
+}
+
+.block__twoPriceAtRoundOne {
+    @include blockOfGoldOrGrayContent__priceAtRoundOne;
+}
+
+.block__twoPriceAtRoundTwo,
+.block__twoPriceAtRoundThree {
+    @include blockOfGoldOrGrayContent__priceAtRoundItem;
+}
+
+.block__twoPriceAtRoundLine {
+    @include blockOfGoldOrGrayContent__priceAtRoundLine(gold);
+}
+///////////////////////////@end
+
+// MOBILE
+.block__twoInner .menu__phone {
+    @include button_mobile_round_phone;
+
+    margin-block-start: 20px;
+
+    width: 50px;
+    height: 50px;
+}
+
+.block__twoInnerMobileCode {
+    @include block__innerMobileCode;
+}
+
+.block__twoInnerMobileText {
+    @include block__innerMobileText;
+}
+
+.block__twoInner .menu__phone,
+.block__twoInnerMobileCode,
+.block__twoInnerMobileText,
+.block__twoInnerMobilePrice {
+    @media (min-width: 768px) {
+        display: none;
+    }
+}

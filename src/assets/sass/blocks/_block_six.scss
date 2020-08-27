@@ -1,0 +1,283 @@
+.block__six {
+    background: $lightBlack;
+
+    & .wrapper__block {
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+
+        padding: 95px 0 30px;
+
+        position: relative;
+
+        overflow: hidden;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            flex-direction: column;
+
+            padding: 150px 70px 0;
+        }
+
+        @media (min-width: 1440px) {
+            flex-direction: row;
+            align-items: flex-end;
+
+            padding-inline-start: 100px;
+        }
+
+    }
+
+    & .swiper-container {
+        align-self: flex-start;
+
+        @media (max-width: 767px) {
+            align-self: center;
+
+            width: 218px;
+
+            overflow: hidden;
+        }
+    }
+
+    & .arrow__left, .arrow__right {
+        top: 50%;
+
+        @media (min-width: 768px) {
+            top: 30%;
+        }
+    }
+
+    & .arrow__left {
+        @media (min-width: 768px) {
+            left: 35px;
+        }
+    }
+
+    & .arrow__right {
+        @media (min-width: 768px) {
+            right: 35px;
+        }
+    }
+
+    &::before {
+        content: '';
+
+        width: 212px;
+        height: 212px;
+
+        background: url('../img/block_six/dots.svg');
+        background-size: cover;
+
+        position: absolute;
+        bottom: 0;
+        
+        @media (min-width:1440px) {
+            right: 14px;
+        }
+
+        @media (min-width:768px) {
+            right: 6px;
+        }
+
+        @media (max-width:767px) {
+            display: none;
+        }
+    }
+}
+.block__sixReviews {
+    display: flex;
+    flex: 1;
+    align-self: center;
+    flex-grow: 0;
+    flex-basis: auto;
+
+    & .arrow__left, & .arrow__right {
+        top: inherit;
+
+        transform: translateY(117px);
+    }
+
+    & .arrow__left {
+        left: 30px;
+    }
+
+    & .arrow__right {
+        right: 30px;
+    }
+
+    @media (min-width: 768px) {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+
+        width: 420px;
+    }
+
+    @media (min-width: 1440px) {
+        flex-direction: column;
+        flex-shrink: 0;
+        align-self: flex-end;
+
+        width: fit-content;
+
+        padding-inline-end: 75px;
+        padding-block-end: 40px;
+    }
+}
+.block__sixReviewsHeading {
+    font: bold 22px Georgia;
+    text-align: center;
+    color: #fff;
+
+    @media (min-width: 768px) {
+        width: 100%;
+
+        font-size: 36px;
+        text-align: left;
+
+        position: static;
+    }
+
+    @media (min-width: 1440px) {
+        margin-block-end: 40px;
+    }
+}
+
+.block__sixReviewsHeadingCompVer {
+    display: none;
+
+    @media (min-width: 1440px) {
+        display: initial;
+
+        margin-block-end: 40px;
+    }
+}
+
+.block__sixReview {
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+
+    padding-block-start: 40px;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: normal;
+
+        padding-block-start: 40px;
+        padding-inline-end: 50px;
+    }
+
+    @media (min-width: 1440px) {
+        flex: 1;
+
+        padding: 0;
+
+        width: initial;
+    }
+}
+
+.block__sixReviewAvatar {
+    width: 58px;
+    height: 58px;
+}
+
+.block__sixReviewContext {
+    margin-block-start: 15px;
+    margin-block-end: 40px;
+
+    text-align: center;
+
+    @media (min-width: 768px) {
+        margin-inline-start: 20px;
+
+        text-align: left;
+    }
+}
+
+.block__sixReviewAuthor {
+    font: bold 16px Georgia;
+    color: #fff;
+}
+
+.block__sixReviewText {
+    margin-block-start: 10px;
+
+    width: 220px;
+
+    font-size: 12px;
+    line-height: 20px;
+    color: $greyShadow;
+
+    @media (min-width: 768px) {
+        width: 360px;
+    }
+}
+
+.block__sixProgressive {
+    display: none;
+    
+    @media (min-width: 768px) {
+        display: flex;
+
+        justify-content: space-between;
+        flex-direction: column;
+        flex-grow: 1;
+
+        padding: 35px 50px 20px 140px;
+
+        width: 628px;
+
+        background: #fff;
+        
+        color: #000;
+        
+        position: relative;
+    }
+
+    @media (min-width: 1440px) {
+        flex-grow: 0;
+
+        padding: 80px 60px 15px 160px;
+
+        width: 645px;
+    }
+
+}
+
+.block__sixProgress {
+    display: flex;
+}
+
+.block__sixProgressiveIconOne {
+    @include block__sixProgressiveIcon(52.5px);
+}
+.block__sixProgressiveIconTwo {
+    @include block__sixProgressiveIcon(70px);
+}
+.block__sixProgressiveIconThree {
+    @include block__sixProgressiveIcon(70px);
+}
+.block__sixProgressiveHeading {
+    font: bold 22px Georgia;
+    color: $lightBlack;
+}
+.block__sixProgressiveText {
+    margin-block-start: 5px;
+
+    font-size: 14px;
+    color: $lightBlack;
+
+    @media (min-width: 1440px) {
+        margin-block-start: 15px;
+    }
+}
+
+.block__sixProgressiveReviewContext {
+    padding-block-end: 25px;
+
+    @media (min-width: 1440px) {
+        padding-block-end: 50px;
+    }
+}

@@ -1,0 +1,86 @@
+@import "vars";
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    &::selection {
+        color: $lightGreyShadow; /* Цвет текста */
+        background: $gold; /* Цвет фона */
+    }
+}
+
+button {
+    outline: none;
+    border: none;
+
+    cursor: pointer;
+}
+
+/* Default styles */
+html {
+    overflow: hidden !important;
+}
+
+body {
+    font: normal 16px Inter, sans-serif;
+    line-height: 27px;
+}
+
+h1 {
+    font: bold 54px Georgia;
+    letter-spacing: 0.1em;
+    color: #FFF;
+}
+
+h2 {
+    font: bold 36px Georgia;
+    color: #FFF;
+}
+
+h3 {
+    font: bold 22px Georgia;
+    color: #FFF;
+}
+
+p {
+    font-size: 14px;
+    line-height: 24px;
+    color: #fff;
+}
+
+.wrapper {
+    width: 1380px;
+
+    margin: 0 auto;
+    padding: 0 70px;
+
+    @media (max-width: 768px) {
+        padding: 0 30px;
+    }
+}
+
+.wrapper__block {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    overflow: hidden;
+}
+
+/* Blocks */
+@import "./blocks/index";
+
+/* Components */
+@import "./components/index";
+
+/* Keyframes */
+@keyframes spin_phone {
+    25% { transform:rotate(70deg);}
+    50% { transform:rotate(0deg);}
+    75% { transform:rotate(70deg);}
+    100% { transform:rotate(0deg);}
+}

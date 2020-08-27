@@ -1,0 +1,30 @@
+.arrow__left, .arrow__right {
+    width: 10px;
+    height: 22px;
+
+    background-size: contain;
+
+    position: absolute;
+    top: 300px;
+
+    cursor: pointer;
+    z-index: 1;
+
+    &:focus {
+        outline: none;
+    } 
+
+    @media (min-width: 1440px) {
+        display: none;
+    }
+}
+
+.arrow__left {
+    background: url('../img/arrow_left.svg');
+    left: 70px;
+}
+
+.arrow__right {
+    background: url('../img/arrow_right.svg');
+    right: 70px;
+}
